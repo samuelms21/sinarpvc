@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            {{ range .Site.Pages }}
+                {{ if .Section }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </nav>
+
+    <!-- Site Header & Hero/Banner Section -->
+    <header>
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Params.description }}</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {{ .Content }}
+        <br>
+        <!-- Recent Posts -->
+        <section>
+            <h2>Recent Posts</h2>
+            <ul>
+                {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </section>
+        <br>
+        <!-- Top 5 Products -->
+        <section>
+            <h2>Our Products</h2>
+            <ul>
+                {{ range first 5 (where .Site.RegularPages "Type" "products") }}
+                <li>
+                    <a style="color: red; background-color: white; text-decoration: none;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
