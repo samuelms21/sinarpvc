@@ -1,0 +1,23 @@
+# Hugo build output
+/public/
+./resources/
+
+# Temporary files
+/tmp/
+.DS_Store
+
+# Hugo server cache
+.hugo_build.lock
+
+# Netlify or deployment-specific files
+/netlify/
+.firebase/
+.vercel/
+
+# Node.js dependencies (if using npm/yarn for themes or scripts)
+node_modules/
+
+# System-specific files
+*.swp
+*.swo
+Thumbs.db
