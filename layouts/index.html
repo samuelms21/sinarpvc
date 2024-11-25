@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ $styles := resources.Get "css/main.css" | postCSS }}
-
-    {{ if hugo.IsServer }}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ $styles := resources.Get "css/main.css" | postCSS }} {{ if hugo.IsServer
+    }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
-    {{ else }}
-    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+    {{ else }} {{ $styles := $styles | minify | fingerprint |
+    resources.PostProcess }}
+    <link
+      rel="stylesheet"
+      href="{{ $styles.RelPermalink }}"
+      integrity="{{ $styles.Data.Integrity }}"
+    />
     {{ end }}
     <title>{{ .Title }}</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation Bar -->
-    <nav class="flex flex-row max-w-7xl mx-auto items-center justify-between p-5">
-        <div>
-            <h3 class="font-bold text-2xl text-red-700">SINAR PVC</h3>
-            <p>Solusi Plafon PVC, Wall Panel PVC, PVC Marmer, Dinding WPC, Lantai SPC</p>
-        </div>
-        <ul class="flex flex-row justify-center">
-            {{ range .Site.Pages }}
-                {{ if .IsSection }}
-                    <li>
-                        <a 
-                            href="{{ .RelPermalink }}" 
-                            class="font-semibold px-5 py-2 mx-5 rounded-lg text-red-700 hover:bg-red-700 hover:text-white">
-                            {{ .Title }}
-                        </a>
-                    </li>
-                {{ end }}
-            {{ end }}
-        </ul>
+    <nav
+      class="flex flex-row max-w-7xl mx-auto items-center justify-between p-5"
+    >
+      <div>
+        <h3 class="font-bold text-2xl text-red-700">SINAR PVC</h3>
+        <p>
+          Solusi Plafon PVC, Wall Panel PVC, PVC Marmer, Dinding WPC, Lantai SPC
+        </p>
+      </div>
+      <ul class="flex flex-row justify-center">
+        {{ range .Site.Pages }} {{ if .IsSection }}
+        <li>
+          <a
+            href="{{ .RelPermalink }}"
+            class="font-semibold px-5 py-2 mx-5 rounded-lg text-red-700 hover:bg-red-700 hover:text-white"
+          >
+            {{ .Title }}
+          </a>
+        </li>
+        {{ end }} {{ end }}
+      </ul>
     </nav>
 
     <!-- Site Header & Hero/Banner Section -->
-    <header class="max-w-7xl mx-auto my-10 text-center">
-        <div class="rounded-xl border-solid border-2">
-            {{ $bannerImg := resources.Get "images/sinar-pvc-banner.png" }}
-            <img class="bg-cover" src="{{ $bannerImg.RelPermalink }}">
-        </div>
-        <h1 class="text-3xl font-bold mb-3">{{ .Title }}</h1>
-        <p>{{ .Params.description }}</p>
+    <header class="max-w-7xl mx-auto mt-5 mb-10 text-center">
+      <div class="rounded-xl mb-5">
+        {{ $bannerImg := resources.Get "images/banner-website-sinar-pvc.png" }}
+        <a href="https://wa.me/6287844685818" target="_blank">
+          <img
+            class="bg-cover rounded-xl"
+            src="{{ $bannerImg.RelPermalink }}"
+          />
+        </a>
+      </div>
+      <h1 class="text-3xl font-bold mb-3">{{ .Title }}</h1>
+      <p>{{ .Params.description }}</p>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto">
-        {{ .Content }}
-        <br>
-        <!-- Recent Posts -->
-        <section>
-            <h2 class="text-2xl font-bold mb-3">Recent Posts</h2>
-            <ul>
-                {{ range first 5 (where .Site.RegularPages "Type" "articles") }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-        </section>
-        <br>
-        <!-- Top 5 Products -->
-        <section>
-            <h2 class="text-2xl font-bold mb-3">Our Products</h2>
-            <ul>
-                {{ range first 5 (where .Site.RegularPages "Type" "products") }}
-                <li>
-                    <a style="color: red; background-color: white; text-decoration: none;" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
+    <main class="max-w-7xl mx-auto rounded-xl bg-red-400">
+      {{ .Content }}
+      <br />
+      <!-- Recent Posts -->
+      <section>
+        <h2 class="text-2xl font-bold mb-3">Recent Posts</h2>
+        <ul>
+          {{ range first 5 (where .Site.RegularPages "Type" "articles") }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+      <br />
+      <!-- Top 5 Products -->
+      <section>
+        <h2 class="text-2xl font-bold mb-3">Our Products</h2>
+        <ul>
+          {{ range first 5 (where .Site.RegularPages "Type" "products") }}
+          <li>
+            <a
+              style="color: red; background-color: white; text-decoration: none"
+              href="{{ .RelPermalink }}"
+              >{{ .Title }}</a
+            >
+          </li>
+          {{ end }}
+        </ul>
+      </section>
     </main>
-</body>
+  </body>
 </html>
