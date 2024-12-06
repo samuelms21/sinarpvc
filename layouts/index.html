@@ -17,30 +17,8 @@
     <title>{{ .Title }}</title>
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav
-      class="flex flex-row max-w-7xl mx-auto items-center justify-between p-5"
-    >
-      <div>
-        <h3 class="font-bold text-2xl text-red-700">SINAR PVC</h3>
-        <p>
-          Solusi Plafon PVC, Wall Panel PVC, PVC Marmer, Dinding WPC, Lantai SPC
-        </p>
-      </div>
-      <ul class="flex flex-row justify-center">
-        {{ range .Site.Pages }} {{ if .IsSection }}
-        <li>
-          <a
-            href="{{ .RelPermalink }}"
-            class="font-semibold px-5 py-2 mx-5 rounded-lg text-red-700 hover:bg-red-700 hover:text-white"
-          >
-            {{ .Title }}
-          </a>
-        </li>
-        {{ end }} {{ end }}
-      </ul>
-    </nav>
-
+    {{ partial "header.html" }}
+    
     <!-- Site Header & Hero/Banner Section -->
     <header class="max-w-7xl mx-auto mt-5 mb-10 text-center">
       <div class="rounded-xl mb-5">
@@ -57,7 +35,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto rounded-xl bg-red-400">
+    <main class="max-w-7xl mx-auto rounded-xl bg-red-400 mb-3">
       {{ .Content }}
       <br />
       <!-- Recent Posts -->
@@ -86,5 +64,14 @@
         </ul>
       </section>
     </main>
+
+    {{ partial "footer.html" }}
+
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>
