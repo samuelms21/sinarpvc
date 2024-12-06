@@ -41,12 +41,19 @@
       <br />
       <!-- Recent Posts -->
       <section class="md:p-3 sm:p-3">
-        <h2 class="text-2xl font-bold mb-3">Recent Posts</h2>
+        <h2 class="text-3xl font-bold mb-3">Recent Posts</h2>
         <ul>
           {{ range first 5 (where .Site.RegularPages "Type" "articles") }}
           <li>
-            <a href="{{ .RelPermalink }}" target="_blank" class="block p-3 shadow-xl mb-3 rounded-xl hover:bg-red-700 hover:text-white transition duration-400 ease-in-out">
-              {{ .Title }}
+            <a href="{{ .RelPermalink }}" target="_blank" class="block shadow-xl mb-3 rounded-xl hover:bg-red-700 hover:text-white transition duration-400 ease-in-out">
+              <div class="flex flex-row items-center p-3">
+                <i class="text-5xl block me-3 bi bi-blockquote-left"></i>
+                <div>
+                  <h4 class="font-bold text-lg">{{ .Title }}</h4>
+                  <p>{{ .Summary }}</p>
+                  <p class="italic">{{ .Date.Format "January 2, 2006" }}</p>
+                </div>
+              </div>
             </a>
           </li>
           {{ end }}
@@ -55,8 +62,8 @@
       <br />
       <!-- Top 5 Products -->
       <section class="md:p-3 sm:p-3 mb-5">
-        <h2 class="text-2xl font-bold mb-3">Our Products</h2>
-        <ul>
+        <h2 class="text-3xl font-bold mb-3">Our Products</h2>
+        <!-- <ul>
           {{ range first 5 (where .Site.RegularPages "Type" "products") }}
           <li>
             <a
@@ -66,7 +73,7 @@
             >
           </li>
           {{ end }}
-        </ul>
+        </ul> -->
       </section>
     </main>
 
