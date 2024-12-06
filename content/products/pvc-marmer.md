@@ -1,7 +1,9 @@
 +++
-date = '2024-11-23T16:23:42+07:00'
-draft = false
-title = 'PVC Marmer'
+title = 'PVC Marmer | Shunda Panel'
+description = "PVC marmer adalah bahan dekorasi berbahan PVC yang menyerupai tampilan marmer asli, tahan air, ringan, dan mudah dipasang."
+type = "products"
+layout = "single"
+date = "2024-12-06"
 +++
 
 # Shunda Panel (PVC Marmer)

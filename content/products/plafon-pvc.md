@@ -1,7 +1,11 @@
 +++
-date = '2024-11-23T16:23:42+07:00'
-draft = false
-title = 'Plafon PVC'
+title = 'Plafon PVC | Shunda Plafon'
+description = "Plafon PVC sebagai alternatif plafon gypsum yang bersifat waterproof, tidak merambat api, anti-jamur, dan mudah dirawat."
+type = "products"
+layout = "single"
+date = "2024-12-06"
 +++
 
 # Shunda Plafon
+
+PLAFON PVC | SHUNDA PLAFON

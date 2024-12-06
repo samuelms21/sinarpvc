@@ -1,7 +1,10 @@
 +++
-date = '2024-11-23T15:47:41+07:00'
-draft = false
 title = 'Panduan Cara Pasang PVC Marmer'
+description = "PVC Marmer sebagai alternatif interior mewah dengan harga lebih ekonomis."
+type = "articles"
+layout = "single"
+summary = "PVC Marmer: solusi interior mewah, ekonomis, dan tren terkini. Simak cara pasangnya di sini!"
+date = "2024-12-06"
 +++
 
 Menggunakan PVC marmer untuk dinding adalah solusi yang ideal untuk menciptakan suasana rumah yang elegan dan modern. Namun, sebelum memutuskan untuk membeli, penting bagi Kamu untuk memahami cara pemasangannya. Dibandingkan dengan marmer asli, PVC marmer memiliki banyak keunggulan, seperti harga yang lebih terjangkau, bobot yang lebih ringan, dan kemudahan dalam pemasangan.

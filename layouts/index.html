@@ -14,13 +14,14 @@
       integrity="{{ $styles.Data.Integrity }}"
     />
     {{ end }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>{{ .Title }}</title>
   </head>
   <body>
-    {{ partial "header.html" }}
+    {{ partial "navbar.html" }}
     
     <!-- Site Header & Hero/Banner Section -->
-    <header class="max-w-7xl mx-auto mt-5 mb-10 text-center">
+    <header class="max-w-7xl md:p-3 sm:p-3 mx-auto mt-5 mb-10 text-center">
       <div class="rounded-xl mb-5">
         {{ $bannerImg := resources.Get "images/banner-website-sinar-pvc.png" }}
         <a href="https://wa.me/6287844685818" target="_blank">
@@ -35,21 +36,25 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto rounded-xl bg-red-400 mb-3">
+    <main class="max-w-7xl mx-auto rounded-xl mb-5">
       {{ .Content }}
       <br />
       <!-- Recent Posts -->
-      <section>
+      <section class="md:p-3 sm:p-3">
         <h2 class="text-2xl font-bold mb-3">Recent Posts</h2>
         <ul>
           {{ range first 5 (where .Site.RegularPages "Type" "articles") }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          <li>
+            <a href="{{ .RelPermalink }}" target="_blank" class="block p-3 shadow-xl mb-3 rounded-xl hover:bg-red-700 hover:text-white transition duration-400 ease-in-out">
+              {{ .Title }}
+            </a>
+          </li>
           {{ end }}
         </ul>
       </section>
       <br />
       <!-- Top 5 Products -->
-      <section>
+      <section class="md:p-3 sm:p-3 mb-5">
         <h2 class="text-2xl font-bold mb-3">Our Products</h2>
         <ul>
           {{ range first 5 (where .Site.RegularPages "Type" "products") }}
