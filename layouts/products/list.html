@@ -4,13 +4,25 @@
   <p>{{ .Params.description }}</p>
 </header>
 
-<section class="max-w-7xl mx-auto grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+<section class="max-w-7xl mx-auto flex flex-row justify-center gap-4 flex-wrap mb-5">
+  
+  {{ $image := resources.Get "images/sinar-pvc-sample-project/sinar-pvc-project-1.png" }}
+  <a href="{{ $image.RelPermalink }}" target="_blank"><img src="{{ $image.RelPermalink }}" class="max-w-72 rounded-xl shadow-xl"></a>
+
+  {{ $anotherImage := resources.Get "images/sinar-pvc-sample-project/sinar-pvc-project-2.png" }}
+  <a href="{{ $anotherImage.RelPermalink }}" target="_blank"><img src="{{ $anotherImage.RelPermalink }}" class="max-w-72 rounded-xl shadow-xl"></a>
+
+  {{ $image3 := resources.Get "images/sinar-pvc-sample-project/sinar-pvc-project-3.png" }}
+  <a href="{{ $image3.RelPermalink }}" target="_blank"><img src="{{ $image3.RelPermalink }}" class="max-w-72 rounded-xl shadow-xl"></a>
+</section>
+
+<section class="max-w-7xl mx-auto grid gap-4 sm:grid-cols-2 md:grid-cols-3 mt-5">
   {{ range .Pages }}
     <article class="p-4 bg-white shadow-md rounded-md">
       <h2 class="text-xl font-semibold">
         <a href="{{ .RelPermalink }}" class="text-black no-underline hover:text-red-700">{{ .Title }}</a>
       </h2>
-      <p class="text-sm text-black mt-2 mb-3">{{ .Summary }}</p>
+      <p class="text-sm text-black mt-2 mb-3">{{ .Description }}</p>
       <p class="text-sm text-gray-600">{{ .Date.Format "January 2, 2006"}}</p>
     </article>
   {{ end }}

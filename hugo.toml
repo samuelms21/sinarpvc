@@ -2,3 +2,11 @@ baseURL = 'https://example.org/'
 languageCode = 'id'
 title = 'Sinar PVC | Plafon PVC, Wall Panel PVC, PVC Marmer'
 theme = 'ananke'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+[permalinks]
+  blog = "/blog/:slug/"
+  docs = "/docs/:section/:slug/"
+  default = "/:section/:title/"

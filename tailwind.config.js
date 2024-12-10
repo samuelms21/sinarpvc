@@ -1,9 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./layouts/**/*.html",  "./content/**/*.md"],
+  content: ["./layouts/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          h1: {
+            '@apply text-4xl font-extrabold text-black': {}
+          },
+          h2: {
+            '@apply text-3xl font-bold text-black': {}
+          },
+          h3: {
+            '@apply text-2xl font-bold text-black': {}
+          },
+          h4: {
+            '@apply text-xl font-semibold': {}
+          }
+        }
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 

@@ -21,7 +21,7 @@
     {{ partial "navbar.html" }}
     
     <!-- Site Header & Hero/Banner Section -->
-    <header class="max-w-7xl md:p-3 sm:p-3 mx-auto mt-5 mb-10 text-center">
+    <header class="max-w-7xl md:p-3 sm:p-3 mx-auto my-5">
       <div class="rounded-xl mb-5">
         {{ $bannerImg := resources.Get "images/banner-website-sinar-pvc.png" }}
         <a href="https://wa.me/6287844685818" target="_blank">
@@ -32,7 +32,8 @@
         </a>
       </div>
       <h1 class="text-3xl font-bold mb-3">{{ .Title }}</h1>
-      <p>{{ .Params.description }}</p>
+      <p class="mb-3">{{ .Params.description }}</p>
+      <p class="italic underline">{{ .Params.slogan }}</p>
     </header>
 
     <!-- Main Content -->
